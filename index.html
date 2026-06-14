@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Birthday for Oni</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="phone-container">
+
+        <section id="screen-chat" class="screen active">
+            <div class="chat-header">
+                <span class="back-btn">‹</span>
+                <div class="user-info">
+                    <div class="avatar-container">
+                        <img id="avatar-profil" src="assets/img/kosong.jpg" class="avatar">
+                        <div class="active-dot"></div>
+                    </div>
+                    <div class="user-text">
+                        <h4 id="chat-username">Unknown</h4>
+                        <small>Active now</small>
+                    </div>
+                </div>
+                <div class="header-icons">
+                    <img src="assets/img/call.jpeg" alt="Call" class="ig-btn-icon">
+                    <img src="assets/img/videocall.jpeg" alt="Video Call" class="ig-btn-icon">
+                </div>
+            </div>
+            
+            <div class="chat-body" id="chat-box">
+                <div class="chat-time">Today 00:00</div>
+                
+                <div id="typing-bubble" class="bubble gray hidden">
+                    <div class="typing-indicator">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quiz-container hidden" id="quiz-box">
+                <button class="quiz-opt" onclick="pilihKuis('salah')">A. Adam</button>
+                <button class="quiz-opt" onclick="pilihKuis('salah')">B. Ziqri</button>
+                <button class="quiz-opt" onclick="pilihKuis('benar')">C. hafiz ganteng hebat kuat sexy dan berotot pintar jenius setia ganteng anak itb fighter terbaik calon orang sukses bukan npd</button>
+            </div>
+
+            <div class="chat-footer-wrapper" id="input-box">
+                <div class="ig-input-field">
+                    <img src="assets/img/camera.jpeg" alt="" class="ig-btn-icon">
+                    <input type="text" id="chat-input" placeholder="Message..." autocomplete="off">
+                    
+                    <div class="ig-icons-right" id="chat-icons-right">
+                        <img src="assets/img/mic.jpeg" alt="" class="ig-btn-icon">
+                        <img src="assets/img/picture.jpeg" alt="" class="ig-btn-icon">
+                    </div>
+
+                    <button id="send-btn" class="hidden-send" onclick="kirimNama()">
+                        <img src="assets/img/ssend.jpeg" alt="" class="ig-send-icon">
+                    </button>
+                </div>
+            </div>
+        </section> 
+
+        <section id="screen-gift" class="screen">
+            <div class="gift-content">
+                <div class="gift-header-info">
+                    <img src="assets/img/foto-profil.jpeg" alt="Avatar" class="avatar">
+                    <h4 class="gift-username-text">SumtatBukanPantat</h4>
+                    <small class="gift-status-text">Sedang mengirim kejutan...</small>
+                </div>
+                
+                <div class="gift-container-box" onclick="bukaKado()">
+                    <div class="gift-box">
+                        <div class="gift-lid"></div>
+                        <div class="gift-ribbon-h"></div>
+                        <div class="gift-main"></div>
+                        <div class="gift-ribbon-v"></div>
+                    </div>
+                </div>
+                
+                <h3 id="gift-title-text">Yakin dibuka?</h3>
+                <p class="sub-gift" id="gift-subtitle-text">Siap untuk kejutan hari ini?</p>
+                
+                <button class="btn-pink" onclick="bukaKado()">Buka Surat Sekarang</button>
+                <p class="footer-hint">Ketuk pada kado atau tombol untuk melanjutkan</p>
+            </div>
+        </section>
+
+        <<!-- ========================================== -->
+        <!-- SCREEN 3: MESSAGE CARD (HALAMAN SURAT)     -->
+        <!-- ========================================== -->
+        <section id="screen-message" class="screen">
+            <div class="message-card">
+                <h3>Dear Oni... ❤️</h3>
+                
+                <div class="message-text">
+                    <p id="typewriter-text"></p>
+                </div>
+
+                <!-- Box tombol kontrol kembar -->
+                <div class="action-buttons" style="display: flex; gap: 10px; justify-content: center; margin-top: 15px;">
+                    <button id="btn-back-kado" class="btn-back" onclick="mundurScreen('screen-gift')">⬅ Balik</button>
+                    <button id="btn-skip-ketik" class="btn-skip" onclick="skipKetikSurat()">Skip ⚡</button>
+                </div>
+
+                <button id="btn-lanjut-galeri" class="btn-pink hidden bounce" onclick="nextScreen('screen-gallery')">
+    Lanjut Lihat Foto... ♥
+</button>
+            </div>
+        </section>
+
+        <section id="screen-gallery" class="screen">
+    <h3 class="gallery-title">Our Memory Dump 🎁</h3>
+    <p class="gallery-subtitle">Every little moment with you</p>
+    
+    <div class="polaroid p-1" 
+     data-judul="Post" 
+     data-caption="Pertama kali mu negpost aku mungkin, setau aku gitu sih asek.">
+    <img src="assets/img/main1.jpeg">
+    <span class="caption"></span>
+</div>
+
+<div class="polaroid p-2" 
+     data-judul="One Piece" 
+     data-caption="Mirip luffy dang lucu intinya.">
+    <img src="assets/img/main2.jpeg">
+    <span class="caption"></span>
+</div>
+
+<div class="polaroid p-3" 
+     data-judul="Hero" 
+     data-caption="Waktu mu kesusahan buat it lalu datang pahlawan dari ujung kulim untuk membantumu, ak blg ke mu ak mau sekalian ngengym padahal emg mau ketemu mu.">
+    <img src="assets/img/main3.jpeg">
+    <span class="caption"></span>
+</div>
+
+<div class="polaroid p-4" 
+     data-judul="Getaran Cinta" 
+     data-caption="Kalau katamu tangan ku geter.">
+    <img src="assets/img/main4.jpeg">
+    <span class="caption"></span>
+</div>
+
+<div class="polaroid p-5" 
+     data-judul="Autis" 
+     data-caption="Gatau ah kayak orang autis.">
+    <img src="assets/img/main5.jpeg">
+    <span class="caption"></span>
+</div>
+
+<div class="polaroid p-6" 
+     data-judul="Confess" 
+     data-caption="Pertemuan yg menggetarkan jiwaku setelah confess pada malam itu, asek.">
+    <img src="assets/img/main6.jpeg">
+    <span class="caption"></span>
+</div>
+
+<div class="polaroid p-7" 
+     data-judul="Go Public" 
+     data-caption="Gacor dang abang kakak ni.">
+    <img src="assets/img/main7.jpeg">
+    <span class="caption"></span>
+</div>
+
+<div class="polaroid p-8" 
+     data-judul="Jersey" 
+     data-caption="Gatau on mau ngisi apa.">
+    <img src="assets/img/main8.jpeg">
+    <span class="caption"></span>
+</div>
+    <div class="decorations">
+        <span class="star-dec" style="top: 100px; left: 20px;">✧</span>
+        <span class="star-dec" style="top: 200px; right: 30px;">♡</span>
+        <span class="star-dec" style="bottom: 150px; left: 40px;">★</span>
+    </div>
+
+    <div class="navigation-buttons">
+        <button class="btn-back" onclick="mundurScreen('screen-message')">⬅ Balik</button>
+        <button class="btn-next" onclick="nextScreen('screen-birthday')">Lanjut... ♥</button>
+    </div>
+</section>
+
+        <!-- ========================================== -->
+        <!-- SCREEN 5: BIRTHDAY (HALAMAN UCAPAN AKHIR)  -->
+        <!-- ========================================== -->
+        <section id="screen-birthday" class="screen birthday-bg">
+            <div id="flowers-container"></div>
+
+            <div class="birthday-content">
+                <p class="sparkle">IT'S YOUR DAY</p>
+                <h1>HAPPY BIRTHDAY</h1>
+                <h2 class="name-highlight">ONI</h2>
+                <p class="wish">Wishing you all the best in the world.</p>
+                
+                <!-- Tombol Undo di paling akhir untuk balik melihat foto-foto -->
+                <button class="btn-back" onclick="mundurScreen('screen-gallery')" style="margin-top: 30px; padding: 8px 20px;">⬅ Balik Lihat Foto</button>
+            </div>
+        </section>
+
+    <audio id="bg-music" preload="auto">
+        <source src="assets/img/lagu.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+
+    <div id="photo-modal">
+    <div class="modal-content">
+        <span class="close" onclick="tutupModal()">&times;</span>
+        <img id="modal-img" src="" alt="Foto Kenangan">
+        <h3 id="modal-judul"></h3>
+        <p id="modal-caption"></p>
+    </div>
+</div>
+
+</body>
+</html>
